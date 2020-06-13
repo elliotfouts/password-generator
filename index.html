@@ -5,58 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <script src="https://kit.fontawesome.com/314044026f.js" crossorigin="anonymous"></script>
     <title>Password Generator</title>
 </head>
 <body>
 
     <header>
-        <h1>Password Generator</h1>
+        <h2>Password Generator</h2>
     </header>
 
-    <section>
+    <div class="container">
+        
         <form class="password-criterea" action="submit">
             <h2>Number of Characters</h2>
             <div class="slider-container">
-                <p id="demo"> </p>
-                <input class="slider" id ="myRange" type="range" min="8" max="128" value="68">
+                <p id="slider-value-display"> </p>
+                <input class="slider" id ="myRange" type="range" min="8" max="128" value="8">
             </div>
             <h2>Type of Characters</h2>
-            <div class="password-criterea-row">
-                <input type="checkbox" class="type-of-chars special">
-                <p class="checkbox-p">Special Characters</p>
+            <div class="characters-container">
+                <div class="character-type">
+                    <input type="checkbox" class="type-of-chars special">
+                    <p class="checkbox-p">Special Characters</p>
+                </div>
+                <div class="character-type">
+                    <input type="checkbox" class="type-of-chars numbers">
+                    <p class="checkbox-p">Numbers</p>
+                </div>
+                <div class="character-type">
+                    <input type="checkbox" class="type-of-chars uppercase">
+                    <p class="checkbox-p">Uppercase</p class="checkbox-p">
+                </div>
+                <div class="character-type">                
+                    <input type="checkbox" class="type-of-chars lowercase">
+                    <p class="checkbox-p">Lowercase</p>
+                </div>
             </div>
-            <br>
-            <div class="password-criterea-row">
-                <input type="checkbox" class="type-of-chars numbers">
-                <p class="checkbox-p">Numbers</p>
-            </div>
-            <br>
-            <div class="password-criterea-row">
-                <input type="checkbox" class="type-of-chars uppercase">
-                <p class="checkbox-p">Uppercase</p class="checkbox-p">
-            </div>
-            <br>
-            <div class="password-criterea-row">                
-                <input type="checkbox" class="type-of-chars lowercase">
-                <p class="checkbox-p">Lowercase</p>
-            </div>
-            <p class="password-criterea-caption">Feel free to edit your password after it has been generated!</p>
         </form>
-
+        
+        <button class="generate-password">Generate</button>
+        <p class="password-criterea-caption">Feel free to edit your password after it has been generated!</p>
+    
         <div class="password-container">
-            <div class="password-display">
-                <textarea spellcheck="false" id="password"></textarea>
-            </div>
-            <div class="buttons">
-                <button class="generate-password">Generate</button>
-                <button class="clipboard-copy">Copy</button>
-            </div>
+            <i class="far fa-copy clipboard-copy"></i>
+            <input spellcheck="false" id="password-display"></input>
         </div>
-    </section>
+    </div>
 
-    <script src="main.js"></script>
+
+    <script src="assets/js/generatePassword.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
